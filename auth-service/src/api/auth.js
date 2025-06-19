@@ -1,5 +1,3 @@
-const AuthValidator = require('../validator/AuthValidator');
-const AuthService = require('../services/AuthService');
 const TokenManager = require('../tokenize/TokenManager');
 
 exports.plugin = {
