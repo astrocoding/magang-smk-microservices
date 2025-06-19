@@ -12,7 +12,6 @@ const init = async () => {
 
   await server.register([Jwt, H2o2]);
 
-  // JWT strategy: validate token for protected routes
   server.auth.strategy('gateway_jwt', 'jwt', {
     keys: process.env.ACCESS_TOKEN_KEY,
     verify: { aud: false, iss: false, sub: false, maxAgeSec: process.env.ACCESS_TOKEN_AGE },
