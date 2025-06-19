@@ -39,6 +39,22 @@ const init = async () => {
     }
   });
 
+  // Proxy /admins/* routes - require admin JWT
+  server.route({
+    method: ['GET','POST','PUT','DELETE'],
+    path: '/admins/{param*}',
+    handler: {
+      proxy: {
+        mapUri: (req) => ({
+          uri: `${process.env.ADMIN_SERVICE_URL}/admins${req.params.param ? '/' + req.params.param : ''}`,
+          headers: req.headers
+        }),
+        passThrough: true,
+        xforward: true
+      }
+    }
+  });
+
   // Health check
   server.route({
     method: 'GET',

@@ -9,7 +9,7 @@ exports.up = pgm => {
     created_at: { type: 'timestamp', notNull: true, default: pgm.func('current_timestamp') },
     updated_at: { type: 'timestamp', notNull: true, default: pgm.func('current_timestamp') }
   });
-  pgm.addConstraint('admins', 'fk_admin_user', { foreignKeys: [{ columns: 'user_id', references: 'users(id)', onDelete: 'cascade' }] });
+  // pgm.addConstraint('admins', 'fk_admin_user', { foreignKeys: [{ columns: 'user_id', references: 'users(id)', onDelete: 'cascade' }] });
 };
 exports.down = pgm => {
   pgm.dropTable('admins');
