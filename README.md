@@ -1,4 +1,3 @@
-# Projek Microservices Web Magang SMK
 # API Test Scenarios (Postman/Manual)
 
 ---
@@ -28,10 +27,7 @@
     "accessToken": "...",
     "refreshToken": "...",
     "user": {
-      "id": "user-...",
-      "email": "admin1@example.com",
-      "role": "admin",
-      "full_name": "Admin Satu"
+      "id": "user-..."
     }
   }
 }
@@ -72,7 +68,13 @@
 {
   "status": "success",
   "message": "Student berhasil didaftarkan",
-  "data": { ... }
+  "data": {
+    "accessToken": "...",
+    "refreshToken": "...",
+    "user": {
+      "id": "user-..."
+    }
+  }
 }
 ```
 - Ekspektasi Response (Error):
@@ -105,7 +107,13 @@
 {
   "status": "success",
   "message": "Mentor berhasil didaftarkan",
-  "data": { ... }
+  "data": {
+    "accessToken": "...",
+    "refreshToken": "...",
+    "user": {
+      "id": "user-..."
+    }
+  }
 }
 ```
 - Ekspektasi Response (Error):
@@ -135,7 +143,9 @@
   "data": {
     "accessToken": "...",
     "refreshToken": "...",
-    "user": { ... }
+    "user": {
+      "id": "user-..."
+    }
   }
 }
 ```
@@ -162,7 +172,13 @@
 {
   "status": "success",
   "message": "Token berhasil diperbarui",
-  "data": { ... }
+  "data": {
+    "accessToken": "...",
+    "refreshToken": "...",
+    "user": {
+      "id": "user-..."
+    }
+  }
 }
 ```
 - Ekspektasi Response (Error):
@@ -859,10 +875,7 @@ CREATE TABLE assessments (
     "accessToken": "...",
     "refreshToken": "...",
     "user": {
-      "id": "user-...",
-      "email": "company1@example.com",
-      "role": "company",
-      "company_name": "PT. Inovasi Digital"
+      "id": "user-..."
     }
   }
 }
